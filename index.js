@@ -1,7 +1,7 @@
 //https://discord.js.org/#/docs/discord.js/stable/class/GuildMemberRoleManager
 //https://discordjs.guide/creating-your-bot/command-handling.html#dynamically-executing-commands
 
-
+//cc
 
 const fs = require('node:fs');
 const { Client, Collection, Intents } = require('discord.js');
