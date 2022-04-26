@@ -5,7 +5,8 @@
     "@discordjs/rest": "^0.4.1",
     "@fightmegg/riot-api": "^0.0.8",
     "discord-api-types": "^0.31.2",
-    "discord.js": "^13.6.0"
+    "discord.js": "^13.6.0",
+    "dispage": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^8.13.0"

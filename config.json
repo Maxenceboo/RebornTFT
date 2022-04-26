@@ -1,5 +1,9 @@
 {
-	"guildId": "966383087749582859",
+	"guildId": "531927800631001089",
 	"clientId": "966804398355390464",
-	"token": "OTY2ODA0Mzk4MzU1MzkwNDY0.YmHEwg.ZRwA8ugxWtI5w9vg9w89TozdWXw"
+	"token": "OTY2ODA0Mzk4MzU1MzkwNDY0.YmHEwg.cuJwxYUSEHyn7XgIcBdw-PmalFY" ,
+
+	"welcomeChannel" : "531929540587683840",
+	"verifyrole" : "967824479696875570",
+	"createChannel" : "968491843501293568"
 }
