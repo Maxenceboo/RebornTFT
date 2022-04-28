@@ -4,9 +4,10 @@ const Discord = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('rules')
-		.setDescription('embed for rules.'),
+		.setDescription('embed for rules.')
+        .setDefaultPermission(false),
+        private: true,
 	async execute(interaction) {
-    if(!interaction.member.permissions.has('ADMINISTRATOR')) return;
     const embed = new Discord.MessageEmbed()
     embed.setTitle('Rules')
     embed.setDescription(`

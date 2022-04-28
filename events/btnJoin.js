@@ -5,10 +5,6 @@ const { verifyrole } = require('../config.json');	// impor config.json (verifyro
 client.on('interactionCreate', async interaction => {	// on interactionCreate
     if (!interaction.isButton()) return;    // if not interaction.isButton() return
     if (interaction.customId === 'join') {
-        // const guild = client.guilds.cache.get(interaction.guildId);
-        // if (!guild) return;
-        // const member = guild.members.cache.get(interaction.userId);
-        // if (!member) return;
         await interaction.member.roles.add(verifyrole);
     }
     interaction.deferUpdate()
