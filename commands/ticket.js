@@ -1,4 +1,9 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const {
+	MessageActionRow,
+	MessageEmbed,
+	MessageButton,
+  } = require("discord.js");
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -16,12 +21,14 @@ module.exports = {
 				iconURL: interaction.user.avatarURL(),
 			  })
 		// send ticket
-		const row = new Discord.MessageActionRow()
-		row.setComponents(new Discord.MessageButton('https://discord.gg/fzjqQZz', 'cree un ticket')
-			.setStyle('DEFUALT')
+		const row = new MessageActionRow()
+		row.setComponents(new MessageButton('https://discord.gg/fzjqQZz', 'cree un ticket')
+			.setStyle('SECONDARY')
 			.setCustomId('ticket')
 			.setLabel('cree un ticket'),
 		)
-		await interaction.reply({ embeds: [embed], components: [row] })
-	},
+		if (!interaction.member.permissions.has('ADMINISTRATOR'))
+			return interaction.reply( 'vous n\'ete pas modo !');
+		await interaction.reply({ embeds : [embed], components : [row] })
+	}
 };

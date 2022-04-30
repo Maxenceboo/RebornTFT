@@ -14,7 +14,6 @@ const commandFiles = fs
   const command = require(`./commands/${file}`);
   client.commands.set(command.data.name, command); // create a new item in the Collection with the key as the command name and the value as the exported module
 }
-//	// "966383087749582859",
 
 fs.readdir("./events/", (err, files) => {
   files.forEach((f) => require("./events/" + f));
