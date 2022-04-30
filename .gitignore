@@ -1,3 +1,4 @@
+
 config.json
 .DS_Store
 node_modules
@@ -20,4 +21,5 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+config.json
 config.json
