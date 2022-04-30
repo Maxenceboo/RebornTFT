@@ -9,8 +9,8 @@ const Discord = require("discord.js");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("rank")
-    .setDescription("embed for rank with select menu.")
-    .setDefaultPermission(false),
+    .setDescription("embed for rank with select menu."),
+    // .setDefaultPermission(false),
     private: true,
   async execute(interaction) {
     const row = new MessageActionRow().addComponents(
@@ -84,7 +84,9 @@ module.exports = {
       })
       .setTimestamp()
       .setImage("https://i.postimg.cc/fbKjTvPG/banner-Roles.png");
-
+    
+    if (!interaction.member.permissions.has("ADMINISTRATOR"))
+      return interaction.reply( "vous n'ete pas modo !");
     await interaction.reply({
       embeds: [embed],
       components: [row],

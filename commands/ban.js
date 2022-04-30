@@ -11,17 +11,19 @@ module.exports = {
         .addStringOption(option =>
             option.setName('reason')
                 .setDescription('add a reason for ban')
-                .setRequired(false))
-        .setDefaultPermission(false),
-        private: true,
+                .setRequired(false)),
+        // .setDefaultPermission(false),
 	async execute(interaction) {
+        
         // ban user option
         const userban = interaction.options.getUser('userban');
         // choose reason option
         const reason = interaction.options.getString('reason') || 'no reason';
+        if (!interaction.member.permissions.has('ADMINISTRATOR'))
+            return interaction.reply(`Vous n'étes pas modo ! <a:paimonangry:965716487706910720> pour ban ${userban} pour *${reason}*`);
         // ban user
         await interaction.guild.members.ban(userban, { days: 1, reason });
         // send message
-        await interaction.reply(`${userban.username} banned for ${reason}`);
+        await interaction.reply(`${userban} banned for ${reason}`);
 	},
 };

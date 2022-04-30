@@ -4,8 +4,8 @@ const Discord = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('rules')
-		.setDescription('embed for rules.')
-        .setDefaultPermission(false),
+		.setDescription('embed for rules.'),
+        // .setDefaultPermission(false),
         private: true,
 	async execute(interaction) {
     const embed = new Discord.MessageEmbed()
@@ -37,6 +37,8 @@ module.exports = {
     const row = new Discord.MessageActionRow()
     row.setComponents(new Discord.MessageButton('https://discord.gg/fzjqQZz', 'Rejoindre le serveur').setStyle('SUCCESS').setCustomId('join').setLabel('Rejoindre le serveur'))
 
+    if (!interaction.member.permissions.has('ADMINISTRATOR'))
+        return interaction.reply( 'vous n\'ete pas modo !');
     await interaction.reply({ embeds : [embed], components : [row] })
 	},
 };

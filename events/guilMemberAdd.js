@@ -1,5 +1,5 @@
 const { Client, Collection, Intents, Interaction } = require('discord.js');	// impor discord.js (Client, Collection, Intents)
-const client = require('../index.js');	// impor index.js (client)
+const client = require('../bot.js');	// impor index.js (client)
 const { welcomeChannel, guildId } = require('../config.json');	// impor config.json (welcomeChannel)
 
 client.on('guildMemberAdd', async member => {	// on guildMemberAdd

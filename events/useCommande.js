@@ -1,5 +1,5 @@
 const { Client, Collection, Intents } = require('discord.js');	// impor discord.js (Client, Collection, Intents)
-const client = require('../index.js');	// impor index.js (client)
+const client = require('../bot.js');	// impor index.js (client)
 
 
 client.on('interactionCreate', async interaction => {	// on interactionCreate

@@ -9,8 +9,8 @@ const {
   module.exports = {
     data: new SlashCommandBuilder()
       .setName("rankdoubleup")
-      .setDescription("embed for rank double up with select menu.")
-      .setDefaultPermission(false),
+      .setDescription("embed for rank double up with select menu."),
+      // .setDefaultPermission(false),
       private: true,
     async execute(interaction) {
       const row = new MessageActionRow().addComponents(
@@ -60,7 +60,9 @@ const {
         })
         .setTimestamp()
         .setImage("https://i.postimg.cc/fbKjTvPG/banner-Roles.png");
-  
+      
+      if (!interaction.member.permissions.has("ADMINISTRATOR"))
+        return interaction.reply( "vous n'ete pas modo !");
       await interaction.reply({
         embeds: [embed],
         components: [row],
