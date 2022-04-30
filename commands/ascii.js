@@ -1,6 +1,5 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const figlet = require("figlet");
-const { readdirSync } = require("node:fs");
 
 module.exports = {
   data: new SlashCommandBuilder()
